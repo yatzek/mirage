@@ -4,12 +4,12 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "mirage"
+  s.name = "mirage-on-thin"
   s.version = "3.0.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Leon Davis"]
-  s.date = "2014-06-05"
+  s.date = "2014-11-18"
   s.description = "Mirage aids testing of your applications by hosting mock responses so that your applications do not have to talk to real endpoints. Its accessible via HTTP and has a RESTful interface."
   s.executables = ["mirage"]
   s.extra_rdoc_files = [
@@ -81,7 +81,7 @@ Gem::Specification.new do |s|
     "lib/mirage/client/template/model/common_methods.rb",
     "lib/mirage/client/template/model/instance_methods.rb",
     "lib/mirage/client/templates.rb",
-    "mirage.gemspec",
+    "mirage-on-thin.gemspec",
     "mirage_server.rb",
     "server/app.rb",
     "server/binary_data_checker.rb",
@@ -121,14 +121,15 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.post_install_message = "\n===============================================================================\nMirage v3:\n\nMirage has just gone up a major version from 2 to 3. If your project uses\na previous version take a look at https://github.com/lashd/mirage to see\nwhat's changed\n===============================================================================\n"
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.25"
+  s.rubygems_version = "2.0.14"
   s.summary = "Mirage is a easy mock server for testing your applications"
 
   if s.respond_to? :specification_version then
-    s.specification_version = 3
+    s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<sinatra>, [">= 0"])
+      s.add_runtime_dependency(%q<thin>, [">= 0"])
       s.add_runtime_dependency(%q<childprocess>, [">= 0"])
       s.add_runtime_dependency(%q<waitforit>, [">= 0"])
       s.add_runtime_dependency(%q<thor>, [">= 0"])
@@ -142,6 +143,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<jruby-openssl>, [">= 0"])
     else
       s.add_dependency(%q<sinatra>, [">= 0"])
+      s.add_dependency(%q<thin>, [">= 0"])
       s.add_dependency(%q<childprocess>, [">= 0"])
       s.add_dependency(%q<waitforit>, [">= 0"])
       s.add_dependency(%q<thor>, [">= 0"])
@@ -156,6 +158,7 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<sinatra>, [">= 0"])
+    s.add_dependency(%q<thin>, [">= 0"])
     s.add_dependency(%q<childprocess>, [">= 0"])
     s.add_dependency(%q<waitforit>, [">= 0"])
     s.add_dependency(%q<thor>, [">= 0"])

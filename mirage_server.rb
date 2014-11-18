@@ -19,7 +19,7 @@ module Mirage
       set :show_exceptions, false
       set :logging, true
       set :dump_errors, true
-      set :server, 'webrick'
+      set :server, 'thin'
       set :views, "#{ROOT_DIR}/views"
       set :bind, '0.0.0.0'
 
@@ -32,4 +32,4 @@ module Mirage
 end
 
 
-Mirage::Server.run! :server => 'webrick'
+Mirage::Server.run! :server => 'thin'

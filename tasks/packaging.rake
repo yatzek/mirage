@@ -8,7 +8,7 @@ task :clean do |task|
 end
 
 Jeweler::Tasks.new do |gem|
-  gem.name = "mirage"
+  gem.name = "mirage-on-thin"
   gem.homepage = "https://github.com/lashd/mirage"
   gem.license = "MIT"
   gem.summary = "Mirage is a easy mock server for testing your applications"
